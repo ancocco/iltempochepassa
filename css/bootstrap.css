@@ -5300,6 +5300,10 @@ a.badge-dark:focus, a.badge-dark.focus {
 .backv {
     background-image: url("../images/vihar/yamuna.jpg");
 }
+.backmsg {
+    background-image: url("../images/bg_4.jpg");
+}
+
 @media (min-width: 576px) {
     .jumbotron {
     padding: 4rem 2rem;
