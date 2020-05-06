@@ -1,27 +1,102 @@
 <!DOCTYPE html>
-
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8" />
-    <title></title>
+<meta charset="utf-8" />
+    <title>Feedback</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/leavemsg.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angularjs-ie8-build/1.4.7/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular-route.min.js"></script>
 </head>
 <body>
-    <form name="input" method="post" action="https://formspree.io/antco2017@gmail.com">
-        <label>
-            Your Name:
-            <input type="text" name="name">
-        </label>
-        <label>
-            Your Email:
-            <input type="email" name="_replyto">
-        </label>
-        <label>
-            Message:
-            <textarea name="message"></textarea>
-        </label>
-        <input type="submit" value="Send">
-        <input type="hidden" name="_subject" value="test message">
-        <input type="hidden" name="_next" value="assam.html">
-    </form>
+    <div class="container-fluid text-center">
+        <div class="page-logo">
+            <img src="images/iltempochepassa.png" class="img-fluid-height" />
+        </div>
+        <nav>
+            <ul class="nav">
+                <li><a class="text-secondary" href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle text-secondary" href="assam.html">Assam</a>
+                    <div class="dropdown-content">
+                        <a href="parcokaz.html" class="dropdown-item">Parco - Kaziranga</a>
+                        <a href="cascata.html" class="dropdown-item">Cascate - Bokakhat</a>
+                        <a href="dintorni.html" class="dropdown-item">Vicinato - Agoratoli</a>
+                    </div>
+                </li>
+                <li><a class="text-secondary" href="dayone.html">Day one</a></li>
+                <li><a class="badge-secondary" href="leavemsg.html">Message</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="jumbotron text-center backmsg">
+        <h1 style="color: oldlace">La tua opinione</h1>
+        <p style="color: oldlace">Il tempo che passa needs your feedback</p>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-2">
+                <div class="thumbnail">
+                    <img src="images/assam/bird.jpg" alt="Uccelli a caccia di animaletti anfibi." style="width:100%" class="img-thumbnail">
+                    <div class="caption">
+                        <p>Si va a caccia in mezzo alle acque palustri.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-7">
+                <div ng-controller="NameController">
+                    <form name="input" method="post" action="https://formspree.io/antco2017@gmail.com">
+                        <div class="row">
+                            <div class="col-sm-5">
+                                <label for="fname">Name</label>
+                                <input type="text" ng-model="firstName" placeholder="Enter a name here">
+                                <label for="argomento">Commenta argomento / theme</label>
+                                <select ng-model="argomento" name="theme">
+                                    <option value="assam">Assam</option>
+                                    <option value="park">Kaziranga</option>
+                                    <option value="neighbor">Neighbrohood-dintorni</option>
+                                    <option value="waterf">Waterfalls-Cascate</option>
+                                    <option value="dayone">DayOne</option>
+                                </select>
+
+                                <input type="submit" value="Send">
+                                <input type="hidden" name="_subject" value="iltempochepassa">
+                                <input type="hidden" name="_next" value="assam.html">
+
+                            </div>
+                            <div class="col-sm-7">
+                                <label for="lemail" style="padding-bottom:2%">Email </label></br>
+                                <input type="email" ng-model="ename" placeholder="Your email" style="height:18%; width:50%;">
+                                </br>
+                                <label for="lcomment" style="padding-top:5%">Comment</label>
+                                <textarea ng-model="comment" name="subject" placeholder="Write your comment... Scrivi la tua opinione" style="height:30%"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                    </br></br>
+                </div>
+                <footer>Leave a feedback or ask for info</footer>
+            </div>
+            <div class="col-sm-3">
+                <div class="thumbnail">
+                    <img src="images/assam/end.jpg" alt="Nell'aeroporto di Guwahati si trova una statua in dimensione reale di un rinoceronte." style="width:100%" class="img-thumbnail">
+                    <div class="caption">
+                        <p>
+                            Questa statua si trova nell'aeroporto di Guwahati. Jorhat is the nearst airport to Kaziranga Eastern Range.</br>
+                            Did I see miss my flight?
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
 </body>
 </html>
